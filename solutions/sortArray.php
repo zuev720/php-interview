@@ -19,10 +19,10 @@ $uniqueIdArray = array_unique(array_map(function ($elem) {
 отфильтрованных элементов изначального массива по уникальному id
 таким образом мы возвращаем только те элементы у которых id не повторяется **/
 
-$uniqueArray = array_map(function ($el) use ($array) {
-    $groupKeys = array_filter(array_keys($array), function ($e) use ($array, $el) {
-        if ($el === $array[$e]['id']) {
-            return $array[$e];
+$uniqueArray = array_map(function ($element) use ($array) {
+    $groupKeys = array_filter(array_keys($array), function ($elem) use ($array, $element) {
+        if ($element === $array[$elem]['id']) {
+            return $array[$elem];
         }
     });
 
